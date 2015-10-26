@@ -14,6 +14,12 @@ function Bubble(){
     this.drawBubble = function(){
     ellipse(this.x, this.y, this.bubbleSize, this.bubbleSize);
     }
+
+    this.changeColor = function(){
+        fill("orange");
+        this.drawBubble();
+
+    }
 }//end bubble
 
 
@@ -38,16 +44,19 @@ function setup(){
 //listen for mouse pressed with the built-in mousePressed method
 function mousePressed(){
 
-var d;
+
 //loop through myArray and check if the mouse is in each bubble
+    var d;
   for(var i=0; i<myArray.length; i++){
 
     d = dist(mouseX,mouseY,myArray[i].x, myArray[i].y);
+//      console.log("distannce",d);
 
-
-
+//check to see if the distance is less then the radius
+      //ie is the mouse in the bubble
     if(d < myArray[i].r){
-    console.log("clicked");
+//    console.log("clicked");
+        myArray[i].changeColor()//call the color change function
 
     }
 
