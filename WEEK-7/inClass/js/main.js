@@ -1,18 +1,23 @@
-//bubble Consyructor
+//bubble Consyructor; this is an object
 function Bubble(){
     //create x and y properties (variables)
     this.x = random(width);
     this.y = random(height);
     this.r = 20; //r is for radious wich is one half the width of the circle
     this.bubbleSize = this.r*2; //width and height are twich the radius
-    //draw the bubble
+    this.col = fill("red");
+
+    //method: draw the bubble
+    //now this is an function and i will be use it outside any where
+    this.drawBubble = function(){
     ellipse(this.x, this.y, this.bubbleSize, this.bubbleSize);
+    }
 }//end bubble
 
 
 function setup(){
     //create a canvas. put into a variavle to associate with an element
-    var cnv = createCanvas(800,3000);
+    var cnv = createCanvas(windowWidth, windowHeight);
     cnv.parent("window");
 
     var myArray = [];//create blank array
@@ -20,25 +25,16 @@ function setup(){
 
 
 
-    for(var i=0; i<10; i++){
-        //add bubbles to array
+    for(var i=0; i<100; i++){
+        //add bubbles to array, we need it always to create bubble
         myArray[i] = new Bubble();
+        //here we are doing something with the bubble
+        myArray[i].drawBubble();
     }
 //logout the array
     console.log(myArray);
 
 
-
-    //loop to go through every item of the array
-
-    for(var i=0; i<myArray.length; i++){
-
-//        myArray[i]+="Shajib";
-
-        console.log(myArray[i]);
-    }
-
-     console.log(myArray[i]);
 
 
 }//end setup
