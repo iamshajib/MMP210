@@ -8,13 +8,15 @@ function setup(){
 
     for(var i=0; i<100; i++){
         myArray[i]="item"+i;
+
+        myArray[i] = ellipse(i,i,10,10);
     }
 
     //loop to go through every item of the array
 
     for(var i=0; i<myArray.length; i++){
-        myArray[i]+=5;
 
+        myArray[i]+="Shajib";
         console.log(myArray[i]);
     }
 
