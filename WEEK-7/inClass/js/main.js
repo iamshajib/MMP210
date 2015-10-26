@@ -1,3 +1,6 @@
+//global variable
+var myArray = [];//create blank array
+
 //bubble Consyructor; this is an object
 function Bubble(){
     //create x and y properties (variables)
@@ -5,7 +8,6 @@ function Bubble(){
     this.y = random(height);
     this.r = 20; //r is for radious wich is one half the width of the circle
     this.bubbleSize = this.r*2; //width and height are twich the radius
-    this.col = fill("red");
 
     //method: draw the bubble
     //now this is an function and i will be use it outside any where
@@ -20,10 +22,7 @@ function setup(){
     var cnv = createCanvas(windowWidth, windowHeight);
     cnv.parent("window");
 
-    var myArray = [];//create blank array
     //add stuff to the array with a loop
-
-
 
     for(var i=0; i<100; i++){
         //add bubbles to array, we need it always to create bubble
@@ -34,14 +33,27 @@ function setup(){
 
     console.log(myArray);
 
-
-
 }//end setup
 
 //listen for mouse pressed with the built-in mousePressed method
 function mousePressed(){
 
-//check that is working
-console.log("Mouse Pressed")
+var d;
+//loop through myArray and check if the mouse is in each bubble
+  for(var i=0; i<myArray.length; i++){
+
+    d = dist(mouseX,mouseY,myArray[i].x, myArray[i].y);
+
+
+
+    if(d < myArray[i].r){
+    console.log("clicked");
+
+    }
+
+
+    }
+
+
 }
 
