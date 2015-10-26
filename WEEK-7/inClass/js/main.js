@@ -31,10 +31,16 @@ function setup(){
         //here we are doing something with the bubble
         myArray[i].drawBubble();
     }
-//logout the array
+
     console.log(myArray);
 
 
 
-
 }//end setup
+
+//listen for mouse pressed with the built-in mousePressed method
+function mousePressed(){
+
+//check that is working
+console.log("Mouse Pressed")
+}
