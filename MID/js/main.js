@@ -32,9 +32,9 @@ function draw() {
 
 	} else {
          leftEye_x = 78;
- rightEye_x = 135;
- mouth_y = 70;
- line_x = 120
+         rightEye_x = 135;
+         mouth_y = 70;
+         line_x = 120
 		stroke(0);
 		fill("rgba(51,51,51,0.5)");
 		// rect(100, 100, 20, 100);
