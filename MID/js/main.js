@@ -36,7 +36,7 @@ function Alien(startX, startY) {
 
     this.moveAway = function () {
 
-        // this.figure = this.figure - random(-10,10);
+         //this.figure = this.figure -= random(-5,5);
         this.figure = this.figure - 1;
 
         // this.head = this.head + random(-20,20);
@@ -74,7 +74,7 @@ function setup() {
     var y = 0;
     var gridWidth = width - 100;
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 30; i++) {
         console.log(i);
         //make new alien
         var myAlien = new Alien(x, y);
