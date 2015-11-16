@@ -38,10 +38,10 @@ function drawWindow(startX, startY) {
     var winHeight = 250;
     rect(startX, startY, winWidth, winHeight);
     //window lines
-    line(startX + winWidth/2, startY, startX + winWidth/2, startY + winHeight);
+    // line(startX + winWidth/2, startY, startX + winWidth/2, startY + winHeight);
 
-    line(startX, startY *.333, startX + winWidth, startY *.333);
-    line(startX, startY *.666, startX + winWidth, startY *.666);
+    // line(startX, startY *.333, startX + winWidth, startY *.333);
+    // line(startX, startY *.666, startX + winWidth, startY *.666);
 
 
 }
