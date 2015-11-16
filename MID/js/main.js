@@ -1,7 +1,7 @@
 var aliens; //global variable
 
 
-//STARTING OF THE OBJECTS
+//STARTING OF THE OBJECT
 function Alien(startX, startY) {
     //log to see if it is created
     //console.log('make alien');
@@ -60,7 +60,7 @@ function Alien(startX, startY) {
     }
 
 }
-//ENDING OF THE OBJECTS
+//ENDING OF THE OBJECT
 
 
 //STARTING OF S-E-T--U-P
