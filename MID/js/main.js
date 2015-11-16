@@ -1,7 +1,7 @@
-var aliens;
+var aliens; //global variable
 
 
-//STARTING OF THE F-U-N-C-T-I-O-N
+//STARTING OF THE OBJECTS
 function Alien(startX, startY) {
     //log to see if it is created
     //console.log('make alien');
@@ -15,8 +15,6 @@ function Alien(startX, startY) {
     this.line_ry = startY + 110;
 
     this.draw = function () {
-        //log to see if it is working
-        //console.log('drawing alien');
         //stroke(0);
         fill("#FE2E2E");
         ellipse(startX + 110, this.figure, 50, 130); //figure
@@ -62,7 +60,7 @@ function Alien(startX, startY) {
     }
 
 }
-//ENDING OF THE F-U-N-C-T-I-O-N
+//ENDING OF THE OBJECTS
 
 
 //STARTING OF S-E-T--U-P
@@ -76,14 +74,12 @@ function setup() {
 
     for (var i = 0; i < 30; i++) {
         console.log(i);
-        //make new alien
-        var myAlien = new Alien(x, y);
-        // add the alient to the array
-        aliens.push(myAlien);
-        //tell the alien to draw itself
-        myAlien.draw();
 
-        // aliens[i] = Alien(x, y);
+        var myAlien = new Alien(x, y);
+
+        aliens.push(myAlien);
+
+        myAlien.draw();
 
         x += 150;
 
@@ -101,18 +97,14 @@ function setup() {
 function draw() {
 
     //clear();
-    //1. Draw background
     background(255);
 
-    //2. loop through aliens array
     for (var i = 0; i < aliens.length; i++) {
-        //3. check to see if the mouse is pressed
         if (mouseIsPressed) {
             console.log(i);
             aliens[i].moveAway();
 
         }
-        //4. draw alien
         aliens[i].draw();
     }
 
