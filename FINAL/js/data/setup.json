@@ -1,6 +1,6 @@
 {
     "wallImage": "wall.png",
-    "parkingImage":"wallP.png",
+    "parkingWall":"wallP.png",
     "policeImage": "img3.png",
     "wallLocations":[
         [180, 150],
@@ -11,8 +11,14 @@
         [700, 100],
         [900, 400]
     ],
-    "parkingLocations":[
+    "pWallLocations":[
         [1130, 63],
-        [1130, 150]
+        [1130, 150],
+        [1130, 238],
+        [1130, 326],
+        [1130, 414],
+        [1130, 504],
+        [1130, 598]
+
     ]
 }

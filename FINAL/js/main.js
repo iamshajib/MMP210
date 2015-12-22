@@ -1,6 +1,5 @@
 var car, obstacles, parking, policeCar, stop, plogo;
 var direction = 90;
-var pl1, pl2, pl3, pl4, pl5, pl6, pl7;
 var song, win, backgroundSound;
 var data, images;
 var dataLoaded;
@@ -11,8 +10,8 @@ myRec.interimResults = true; // allow partial
 
 
 function preload() {
-    dataLoaded=false;
-  backgroundSound = loadSound('sound/car.mp3');
+    dataLoaded = false;
+    backgroundSound = loadSound('sound/car.mp3');
 }
 
 function setup() {
@@ -21,15 +20,12 @@ function setup() {
     obstacles = new Group();
 
 
-//    =========================================
-   var url = "js/data/setup.json";
+    //    =========================================
+    var url = "js/data/setup.json";
 
-    //load the json file with jsonLoaded function as a callback
     loadJSON(url, jsonLoaded);
     console.log('setup complete');
 
-
-//============================================
 
     //    -------------sound------------
     backgroundSound.play();
@@ -38,37 +34,37 @@ function setup() {
     song = loadSound('sound/PoliceCar.mp3');
     win = loadSound('sound/win.mp3');
 
+    //------------------------alert------------
+    alert("Welcome! Park the car to win the game. Say, Go, Stop, Back, Up and Down to control the car. Be careful from the police car. Enjoy :-)");
 
-    alert("Welcome! Park the car to win the game. Say, Go, Stop, Back, Up and Down to control the car. Be careful from the police car. Enojy :-)");
 
-
-//    wall = createSprite(180, 150);
-//    wall.addImage(loadImage("image/wall.png"));
-//    obstacles.add(wall);
-//
-//    wall = createSprite(300, 530);
-//    wall.addImage(loadImage("image/wall.png"));
-//    obstacles.add(wall);
-//
-//    wall = createSprite(90, 600);
-//    wall.addImage(loadImage("image/wall.png"));
-//    obstacles.add(wall);
-//
-//    wall = createSprite(500, 330);
-//    wall.addImage(loadImage("image/wall.png"));
-//    obstacles.add(wall);
-//
-//    wall = createSprite(700, 587);
-//    wall.addImage(loadImage("image/wall.png"));
-//    obstacles.add(wall);
-//
-//    wall = createSprite(700, 100);
-//    wall.addImage(loadImage("image/wall.png"));
-//    obstacles.add(wall);
-//
-//    wall = createSprite(900, 400);
-//    wall.addImage(loadImage("image/wall.png"));
-//    obstacles.add(wall);
+    //    wall = createSprite(180, 150);
+    //    wall.addImage(loadImage("image/wall.png"));
+    //    obstacles.add(wall);
+    //
+    //    wall = createSprite(300, 530);
+    //    wall.addImage(loadImage("image/wall.png"));
+    //    obstacles.add(wall);
+    //
+    //    wall = createSprite(90, 600);
+    //    wall.addImage(loadImage("image/wall.png"));
+    //    obstacles.add(wall);
+    //
+    //    wall = createSprite(500, 330);
+    //    wall.addImage(loadImage("image/wall.png"));
+    //    obstacles.add(wall);
+    //
+    //    wall = createSprite(700, 587);
+    //    wall.addImage(loadImage("image/wall.png"));
+    //    obstacles.add(wall);
+    //
+    //    wall = createSprite(700, 100);
+    //    wall.addImage(loadImage("image/wall.png"));
+    //    obstacles.add(wall);
+    //
+    //    wall = createSprite(900, 400);
+    //    wall.addImage(loadImage("image/wall.png"));
+    //    obstacles.add(wall);
 
 
     //*****************STOP*************
@@ -94,33 +90,33 @@ function setup() {
 
 
     //--------------------
-    pl1 = createSprite(1130, 63);
-    pl1.addImage(loadImage("image/wallP.png"));
-    obstacles.add(pl1);
-
-    pl2 = createSprite(1130, 150);
-    pl2.addImage(loadImage("image/wallP.png"));
-    obstacles.add(pl2);
-
-    pl3 = createSprite(1130, 238);
-    pl3.addImage(loadImage("image/wallP.png"));
-    obstacles.add(pl3);
-
-    pl4 = createSprite(1130, 326);
-    pl4.addImage(loadImage("image/wallP.png"));
-    obstacles.add(pl4);
-
-    pl5 = createSprite(1130, 414);
-    pl5.addImage(loadImage("image/wallP.png"));
-    obstacles.add(pl5);
-
-    pl6 = createSprite(1130, 504);
-    pl6.addImage(loadImage("image/wallP.png"));
-    obstacles.add(pl6);
-
-    pl7 = createSprite(1130, 598);
-    pl7.addImage(loadImage("image/wallP.png"));
-    obstacles.add(pl7);
+    //    pl1 = createSprite(1130, 63);
+    //    pl1.addImage(loadImage("image/wallP.png"));
+    //    obstacles.add(pl1);
+    //
+    //    pl2 = createSprite(1130, 150);
+    //    pl2.addImage(loadImage("image/wallP.png"));
+    //    obstacles.add(pl2);
+    //
+    //    pl3 = createSprite(1130, 238);
+    //    pl3.addImage(loadImage("image/wallP.png"));
+    //    obstacles.add(pl3);
+    //
+    //    pl4 = createSprite(1130, 326);
+    //    pl4.addImage(loadImage("image/wallP.png"));
+    //    obstacles.add(pl4);
+    //
+    //    pl5 = createSprite(1130, 414);
+    //    pl5.addImage(loadImage("image/wallP.png"));
+    //    obstacles.add(pl5);
+    //
+    //    pl6 = createSprite(1130, 504);
+    //    pl6.addImage(loadImage("image/wallP.png"));
+    //    obstacles.add(pl6);
+    //
+    //    pl7 = createSprite(1130, 598);
+    //    pl7.addImage(loadImage("image/wallP.png"));
+    //    obstacles.add(pl7);
 
 
 
@@ -140,7 +136,7 @@ function setup() {
 
 
 
-  //******************LOAD PARKING************************
+    //******************LOAD PARKING************************
 
     parking = createSprite(1200, 330);
     parking.addImage(loadImage("image/stop.png"));
@@ -167,8 +163,8 @@ function setup() {
 
 }
 
-function carCollide(){
-console.log('collide');
+function carCollide() {
+    console.log('collide');
 }
 
 
@@ -177,11 +173,11 @@ function draw() {
 
     //***wall obstacle***
 
-    if(dataLoaded){
+    if (dataLoaded) {
         car.collide(obstacles, carCollide); //console.log('obstacles',obstacles);
-    obstacles.collide(car);
+        obstacles.collide(car);
     }
-//    console.log('car',car); //console.log('obstacles',obstacles);
+    //    console.log('car',car); //console.log('obstacles',obstacles);
     //car.collide(wall);
     //***police car movement***
     direction += 1;
@@ -234,14 +230,22 @@ function jsonLoaded(jsonData) {
 function showImages() {
     console.log('showimages');
 
+    //    =======================JSON for WALL====================
     for (var i = 0; i < data.wallLocations.length; i++) {
-     var wall = createSprite(data.wallLocations[i][0], data.wallLocations[i][1]);
-    wall.addImage(loadImage("image/"+data.wallImage));
-    obstacles.add(wall);
+        var wall = createSprite(data.wallLocations[i][0], data.wallLocations[i][1]);
+        wall.addImage(loadImage("image/" + data.wallImage));
+        obstacles.add(wall);
 
-//    data.wallLocations[i].x, data.wallLocations[i].y
-    } console.log('obstacles',obstacles);
-dataLoaded=true;
+        //    ==================JSON forParking  WALL================
+    }
+
+    for (var i = 0; i < data.pWallLocations.length; i++) {
+        var pWall = createSprite(data.pWallLocations[i][0], data.pWallLocations[i][1]);
+        pWall.addImage(loadImage("image/" + data.parkingWall));
+        obstacles.add(pWall);
+
+    }
+    dataLoaded = true;
 }
 
 
