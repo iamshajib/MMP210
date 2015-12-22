@@ -3,6 +3,7 @@ var direction = 90;
 var pl1, pl2, pl3, pl4, pl5, pl6, pl7;
 var song, win, backgroundSound;
 var data, images;
+var dataLoaded;
 
 var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
 myRec.continuous = true; // do continuous recognition
@@ -10,6 +11,7 @@ myRec.interimResults = true; // allow partial
 
 
 function preload() {
+    dataLoaded=false;
   backgroundSound = loadSound('sound/car.mp3');
 }
 
@@ -40,33 +42,33 @@ function setup() {
     alert("Welcome! Park the car to win the game. Say, Go, Stop, Back, Up and Down to control the car. Be careful from the police car. Enojy :-)");
 
 
-    wall = createSprite(180, 150);
-    wall.addImage(loadImage("image/wall.png"));
-    obstacles.add(wall);
-
-    wall = createSprite(300, 530);
-    wall.addImage(loadImage("image/wall.png"));
-    obstacles.add(wall);
-
-    wall = createSprite(90, 600);
-    wall.addImage(loadImage("image/wall.png"));
-    obstacles.add(wall);
-
-    wall = createSprite(500, 330);
-    wall.addImage(loadImage("image/wall.png"));
-    obstacles.add(wall);
-
-    wall = createSprite(700, 587);
-    wall.addImage(loadImage("image/wall.png"));
-    obstacles.add(wall);
-
-    wall = createSprite(700, 100);
-    wall.addImage(loadImage("image/wall.png"));
-    obstacles.add(wall);
-
-    wall = createSprite(900, 400);
-    wall.addImage(loadImage("image/wall.png"));
-    obstacles.add(wall);
+//    wall = createSprite(180, 150);
+//    wall.addImage(loadImage("image/wall.png"));
+//    obstacles.add(wall);
+//
+//    wall = createSprite(300, 530);
+//    wall.addImage(loadImage("image/wall.png"));
+//    obstacles.add(wall);
+//
+//    wall = createSprite(90, 600);
+//    wall.addImage(loadImage("image/wall.png"));
+//    obstacles.add(wall);
+//
+//    wall = createSprite(500, 330);
+//    wall.addImage(loadImage("image/wall.png"));
+//    obstacles.add(wall);
+//
+//    wall = createSprite(700, 587);
+//    wall.addImage(loadImage("image/wall.png"));
+//    obstacles.add(wall);
+//
+//    wall = createSprite(700, 100);
+//    wall.addImage(loadImage("image/wall.png"));
+//    obstacles.add(wall);
+//
+//    wall = createSprite(900, 400);
+//    wall.addImage(loadImage("image/wall.png"));
+//    obstacles.add(wall);
 
 
     //*****************STOP*************
@@ -165,15 +167,21 @@ function setup() {
 
 }
 
+function carCollide(){
+console.log('collide');
+}
 
 
 function draw() {
     background(255, 255, 255);
 
     //***wall obstacle***
-    car.collide(obstacles);
-//    wall.collide(car);
 
+    if(dataLoaded){
+        car.collide(obstacles, carCollide); //console.log('obstacles',obstacles);
+    obstacles.collide(car);
+    }
+//    console.log('car',car); //console.log('obstacles',obstacles);
     //car.collide(wall);
     //***police car movement***
     direction += 1;
@@ -233,7 +241,7 @@ function showImages() {
 
 //    data.wallLocations[i].x, data.wallLocations[i].y
     } console.log('obstacles',obstacles);
-
+dataLoaded=true;
 }
 
 
